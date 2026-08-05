@@ -24,16 +24,11 @@ gradle.lifecycle.beforeProject {
     project.plugins.withId("java") {
         this@beforeProject.extensions.getByType(PublishingExtension::class.java).apply {
             repositories {
+                mavenLocal()
                 maven {
                     url = uri("https://repo.repsy.io/cputnam-a11y/maven")
                     name = "cputnama11yMaven"
                     credentials(PasswordCredentials::class)
-                }
-            }
-
-            publications {
-                create<MavenPublication>("mavenJava") {
-                    from(components["java"])
                 }
             }
         }
