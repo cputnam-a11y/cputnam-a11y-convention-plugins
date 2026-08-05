@@ -2,6 +2,7 @@
 // 1. add the repository to the pluginManagement block in settings.gradle.kts
 pluginManagement {
     repositories {
+        //...
         maven {
             url = uri("https://maven.cp-a11y.dev/")
             name = "cp-a11y maven"
