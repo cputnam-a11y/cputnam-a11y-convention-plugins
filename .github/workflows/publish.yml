@@ -17,4 +17,7 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: publish
+        env:
+          ORG_GRADLE_PROJECT_cputnama11yMavenUsername: ${{ secrets.ORG_GRADLE_PROJECT_cputnama11yMavenUsername }}
+          ORG_GRADLE_PROJECT_cputnama11yMavenPassword: ${{ secrets.ORG_GRADLE_PROJECT_cputnama11yMavenPassword }}
         run: ./gradlew publish
